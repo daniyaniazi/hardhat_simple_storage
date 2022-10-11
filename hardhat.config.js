@@ -1,5 +1,6 @@
 require("@nomicfoundation/hardhat-toolbox")
 require("dotenv").config()
+require("@nomiclabs/hardhat-etherscan")
 
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
@@ -11,6 +12,9 @@ module.exports = {
             accounts: [process.env.PRIVATE_KEY],
             chainId: 5,
         },
+    },
+    etherscan: {
+        apiKey: process.env.ETHERSCAN_API_KEY,
     },
 }
 
