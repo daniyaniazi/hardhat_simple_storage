@@ -12,6 +12,11 @@ module.exports = {
             accounts: [process.env.PRIVATE_KEY],
             chainId: 5,
         },
+        localhost: {
+            url: " http://127.0.0.1:8545/",
+            // accounts: Hardhat Magic,
+            chainId: 31337,
+        },
     },
     etherscan: {
         apiKey: process.env.ETHERSCAN_API_KEY,
