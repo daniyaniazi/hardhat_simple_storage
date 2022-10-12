@@ -1,9 +1,11 @@
-require("@nomicfoundation/hardhat-toolbox")
-require("dotenv").config()
-require("@nomiclabs/hardhat-etherscan")
-require("./tasks/block-number")
-require("hardhat-gas-reporter")
-require("solidity-coverage")
+import "@nomicfoundation/hardhat-toolbox"
+import "dotenv/config"
+import "@nomiclabs/hardhat-etherscan"
+import "./tasks/block-number"
+import "./tasks/accounts"
+import "hardhat-gas-reporter"
+import "solidity-coverage"
+import "@typechain/hardhat"
 
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
@@ -33,13 +35,7 @@ module.exports = {
     },
 }
 
-task("accounts", "Prints the list of accounts", async () => {
-    const accounts = await ethers.getSigners()
 
-    for (const account of accounts) {
-        console.log(account.address)
-    }
-})
 // const {
 //   TASK_COMPILE_SOLIDITY_GET_SOLC_BUILD,
 // } = require("hardhat/builtin-tasks/task-names");

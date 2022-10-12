@@ -1,6 +1,6 @@
-const { task } = require("hardhat/config")
+import { task } from "hardhat/config"
 
-task("block-number", "Print the number of block").setAction(
+export  default task("block-number", "Print the number of block").setAction(
     async (taskArgs, hre) => {
         // hre == hardhat package services
         console.log(
@@ -9,3 +9,5 @@ task("block-number", "Print the number of block").setAction(
         )
     }
 )
+
+

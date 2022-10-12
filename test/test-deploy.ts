@@ -1,11 +1,11 @@
 // Test for SimpleStorage
-const { expect, assert } = require("chai")
-const { ethers } = require("hardhat")
-
+import { expect, assert } from "chai"
+import { ethers } from "hardhat"
+import {SimpleStorage ,SimpleStorage__factory} from "../typechain-types"
 describe("SimpleStorage", () => {
     // before each it()
-    let SimpleStorageFactory
-    let simpleStorage
+    let SimpleStorageFactory:SimpleStorage__factory
+    let simpleStorage : SimpleStorage
     beforeEach(
         // befire each it() we want to deploy our contract
         async () => {
