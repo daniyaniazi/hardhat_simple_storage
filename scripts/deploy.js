@@ -13,6 +13,16 @@ async function main() {
         await simpleStorage.deployTransaction.wait(6)
         await verifyContract(simpleStorage.address, [])
     }
+
+    // interact with contract
+    const currentValue = await simpleStorage.retrieve()
+    console.log("Current Fav Value : ", currentValue)
+
+    // update state
+    const storeTransaction = await simpleStorage.store(6)
+    await storeTransaction.wait(1)
+    const updatedVal = await simpleStorage.retrieve()
+    console.log("Updated Value Fav Value : ", updatedVal)
 }
 
 async function verifyContract(contrcatAddress, args) {
